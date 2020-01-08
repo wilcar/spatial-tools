@@ -1,23 +1,20 @@
-library(revgeo)      # package for reverse geocoding
-library(tidyverse)   # used for add-row function
+# massive-reverse-geocoding with R
+library(revgeo)      # Package used for reverse geocoding (https://cran.r-project.org/web/packages/revgeo/revgeo.pdf).
+library(tidyverse)   # Used for add-row function.
 
-# reprex example
-
-# Creating a data frame with cooridnates
+# Reprex example ;: # Creating a data frame with coordinates
 long <- c(-1.553621, -4.097899)
 lat <- c(47.218371, 47.997542)
 
 coord <- data.frame(long, lat)
 
 # loop
-
 for (i in coord) {
 dataset <- revgeo(longitude= coord[, 1], latitude= coord[, 2], output='frame')
 dataset <- add_row(dataset)
 }
 
 # deleting empties rows and dispalying  d.f
-
 dataset <-  dataset %>%
   na.omit() %>%
   view(dataset)
