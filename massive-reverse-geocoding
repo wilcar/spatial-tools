@@ -14,7 +14,7 @@ dataset <- revgeo(longitude= coord[, 1], latitude= coord[, 2], output='frame')
 dataset <- add_row(dataset)
 }
 
-# deleting empties rows and dispalying  d.f
+# deleting empties rows and displaying  df
 dataset <-  dataset %>%
   na.omit() %>%
   view(dataset)
