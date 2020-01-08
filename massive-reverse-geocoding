@@ -1,4 +1,7 @@
+####################################
 # massive-reverse-geocoding with R
+####################################
+
 library(revgeo)      # Package used for reverse geocoding (https://cran.r-project.org/web/packages/revgeo/revgeo.pdf).
 library(tidyverse)   # Used for add-row function.
 
